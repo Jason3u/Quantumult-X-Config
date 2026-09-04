@@ -22,6 +22,7 @@
 | Binance 币安 | Binance | 默认国内直连，可手动切友好地区 |
 | OKX / Bybit / Bitget / Gate | 各自独立策略组 | 默认「香港自动」 |
 | Cornix 自动交易 | Cornix | 固定新加坡，区内自动最低延迟 |
+| Fomo | Fomo | 默认香港自动；备选按地区不确定性排序 |
 | 国际流媒体（Netflix/Disney+/HBO/YouTube/Spotify/TikTok 等） | InternationalStreaming | 默认香港节点，可手动切地区 |
 | 国内流量 | direct | geoip cn 直连 |
 | 其余外网 | 兜底分流 | 各地区测速组自动选最低延迟 |
@@ -40,10 +41,11 @@ available=香港自动, server-tag-regex=住宅|香港
 ## 自建规则
 
 - 规则仓库：[Jason3u/Proxy-Rules-Collection](https://github.com/Jason3u/Proxy-Rules-Collection)
-- QX 规则位于 `qx/` 目录：X / Binance / OKX / Bybit / Bitget / Gate / Cornix 的 `.list` 文件
+- QX 规则位于 `qx/` 目录：X / Binance / OKX / Bybit / Bitget / Gate / Cornix / Fomo 的 `.list` 文件
 - 通过 jsdelivr CDN 分发，每小时自动更新（update-interval=3600）
 
 ## 注意事项
 
 - 配置内含机场订阅 token 与 MitM 证书（p12），**仅供个人使用**，请勿公开传播
 - 策略与规则按个人风控需求定制（交易所住宅 IP、AI 固定地区等），照抄请结合自身机场情况调整
+- Fomo 的地区可用性和永续合约资格以官方条款为准；策略组排序仅代表网络出口偏好，不用于规避地区限制
