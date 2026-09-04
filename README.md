@@ -21,8 +21,9 @@
 | Binance 币安 | Binance | 默认国内直连，可手动切友好地区 |
 | OKX / Bybit / Bitget / Gate | 各自独立策略组 | 默认「香港自动」 |
 | Cornix 自动交易 | Cornix | 固定新加坡，区内自动最低延迟 |
+| 国际流媒体（Netflix/Disney+/HBO/YouTube/Spotify/TikTok 等） | InternationalStreaming | 默认香港节点，可手动切地区 |
 | 国内流量 | direct | geoip cn 直连 |
-| 其余外网（含流媒体） | 兜底分流 | 各地区测速组自动选最低延迟 |
+| 其余外网 | 兜底分流 | 各地区测速组自动选最低延迟 |
 
 ## 香港自动机制
 
