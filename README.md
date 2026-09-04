@@ -15,9 +15,10 @@
 | 流量类型 | 策略 | 说明 |
 | --- | --- | --- |
 | Apple 核心（AppStore/iCloud/AppleMusic 等） | direct | 直连 |
-| Apple 外区（AppleNews/AppleTV） | 兜底分流 | 走代理 |
+| Apple 外区（AppleNews） | 兜底分流 | 走代理 |
+| AppleTV | InternationalStreaming | 走国际流媒体策略组 |
 | OpenAI / Gemini / Claude / Grok | 各自独立策略组 | 手动选地区，规避 IP 跳变风控 |
-| X（Twitter） | X | 默认香港节点 |
+| X（Twitter） | X | 默认香港自动，可手动切地区 |
 | Binance 币安 | Binance | 默认国内直连，可手动切友好地区 |
 | OKX / Bybit / Bitget / Gate | 各自独立策略组 | 默认「香港自动」 |
 | Cornix 自动交易 | Cornix | 固定新加坡，区内自动最低延迟 |
