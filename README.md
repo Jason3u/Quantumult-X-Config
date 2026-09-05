@@ -21,7 +21,7 @@
 | X（Twitter） | X | 默认香港自动，可手动切地区 |
 | Binance 币安 | Binance | 默认国内直连，可手动切友好地区 |
 | OKX / Bybit / Bitget / Gate | 各自独立策略组 | 默认「香港自动」 |
-| Cornix 自动交易 | Cornix | 固定新加坡，区内自动最低延迟 |
+| Cornix 自动交易 | Cornix | 默认香港节点，可手动切新加坡/日本 |
 | Fomo | Fomo | 默认 direct 直连；可手动切换地区节点 |
 | 国际流媒体（Netflix/Disney+/HBO/YouTube/Spotify/TikTok 等） | InternationalStreaming | 默认香港节点，可手动切地区 |
 | 国内流量 | direct | geoip cn 直连 |
