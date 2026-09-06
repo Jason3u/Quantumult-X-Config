@@ -28,7 +28,7 @@
 | Fomo | Fomo | 默认 direct 直连；可手动切换地区节点 |
 | 国际流媒体（Netflix/Disney+/HBO/YouTube/Spotify/TikTok 等） | InternationalStreaming | 默认香港节点，可手动切地区 |
 | 国内流量 | direct | geoip cn 直连 |
-| 其余外网 | 兜底分流 | 各地区测速组自动选最低延迟 |
+| 其余外网 | 兜底分流 | 默认香港自动；备选顺序：台湾 → 韩国 → 日本 |
 
 ## 香港自动机制
 
