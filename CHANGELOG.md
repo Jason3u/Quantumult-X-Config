@@ -2,6 +2,17 @@
 
 > 本文件记录 qx-public.conf 配置的历次修改。每次修改前请先阅读本文件了解当前状态，修改后必须在此追加记录。
 
+## 2026-09-06（二）· Cornix 延迟排查
+
+### 结论
+Cornix「每个界面点击都转圈」的两个配置侧原因：
+1. ~~测速组 `tolerance=0` 频繁切换节点，WebSocket（`wss://dashboard.cornix.io/ws/ws/`）反复断连~~ —— 上一次修复已解决
+2. **Cornix 分流规则不完善**：原规则仅 `cornix.io` 一条。实测 dashboard JS 包，其第三方运行时依赖（intercom 客服组件 / country.is 国家检测 / mixpanel·mxpnl·avo 埋点 / hotjar / sentry 错误上报 / whop 支付 / calendly / googletagmanager）全部漏到兜底分流，每个域名还要先经国内 DNS 解析再判断 geoip，且出口与 Cornix 组不一致 —— 已在规则仓库补全（`qx/Cornix.list`，12 条），QX 侧 update-interval=3600 到期自动拉新，**本配置文件无需改动**
+
+### 备注
+- 剩余不可避免的延迟：香港节点 → Cornix 后端（欧美）单程 200ms+ 物理延迟，每次点击含多个 API 往返，1 秒左右转圈属于正常范围
+- Clash 配置同步：url-test 组 `tolerance: 0` → `100` 已修复（见 Clash-config CHANGELOG）
+
 ## 2026-09-06 · 连接卡顿排查修复
 
 ### 排查背景
