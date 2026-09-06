@@ -2,6 +2,15 @@
 
 > 本文件记录 qx-public.conf 配置的历次修改。每次修改前请先阅读本文件了解当前状态，修改后必须在此追加记录。
 
+## 2026-09-06
+
+### 策略组
+- **新增 TradingView 策略组**：默认「香港自动」（住宅优先，无住宅回退香港节点），备选香港住宅IP / 香港 / 日本 / 新加坡 / 台湾 / 韩国，可手动切换
+
+### 分流规则
+- **新增 TradingView 分流规则**（自建，[Proxy-Rules-Collection](https://github.com/Jason3u/Proxy-Rules-Collection) `qx/TradingView.list`）：覆盖 `tradingview.com` 主域（官网 / 中文站 / 图表数据 / 静态资源 / API），指向 TradingView 策略组，update-interval=3600
+- 与 Clash 配置（ClashForSelf.yaml）同步新增，两端分流行为保持一致
+
 ## 2026-09-04
 
 ### 配置结构

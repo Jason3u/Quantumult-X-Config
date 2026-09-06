@@ -23,6 +23,7 @@
 | X（Twitter） | X | 默认香港自动，可手动切地区 |
 | Binance 币安 | Binance | 默认国内直连，可手动切友好地区 |
 | OKX / Bybit / Bitget / Gate | 各自独立策略组 | 默认「香港自动」 |
+| TradingView 行情图表 | TradingView | 默认香港自动，可手动切地区 |
 | Cornix 自动交易 | Cornix | 默认香港节点，可手动切新加坡/日本 |
 | Fomo | Fomo | 默认 direct 直连；可手动切换地区节点 |
 | 国际流媒体（Netflix/Disney+/HBO/YouTube/Spotify/TikTok 等） | InternationalStreaming | 默认香港节点，可手动切地区 |
@@ -43,7 +44,7 @@ available=香港自动, server-tag-regex=住宅|香港
 ## 自建规则
 
 - 规则仓库：[Jason3u/Proxy-Rules-Collection](https://github.com/Jason3u/Proxy-Rules-Collection)
-- QX 规则位于 `qx/` 目录：X / Binance / OKX / Bybit / Bitget / Gate / Cornix / Fomo 的 `.list` 文件
+- QX 规则位于 `qx/` 目录：X / Binance / OKX / Bybit / Bitget / Gate / TradingView / Cornix / Fomo 的 `.list` 文件
 - 通过 jsdelivr CDN 分发，每小时自动更新（update-interval=3600）
 
 ## 注意事项
