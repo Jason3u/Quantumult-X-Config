@@ -2,6 +2,21 @@
 
 > 本文件记录 qx-public.conf 配置的历次修改。每次修改前请先阅读本文件了解当前状态，修改后必须在此追加记录。
 
+## 2026-09-06（四）· Binance 默认出口改香港自动
+
+### 排查结论（大陆网络实测）
+用户反馈「Binance 操作不顺畅，怀疑有时走了代理」。实测（大陆出口）结论与直觉相反——**问题不是走了代理，而是 direct 默认已是死路**：
+- 规则完整度无问题：16 条主域/镜像域/CDN/链上浏览器，为 blackmatrix7 规则（12 条）完整超集
+- **主域直连全部被墙**：api/accounts/www.binance.com、stream.binance.com:9443（行情 WebSocket）、cdn-apps.binance.com、public.bnbstatic.com（静态 CDN）直连全部超时
+- **大陆镜像域基本失效**：binancecnt.com / binancezh.com / bnappzh.co / binance.me / binance.cloud 全超时，仅 bnbzh.ac 可通（2.9s，慢）
+- 由此产生的实际体验：App 每次命中主域的请求都要经历 5 秒级超时+重试，再靠残存镜像或缓存走通 → 「每个操作都转圈」；且部分未覆盖埋点域名走兜底（香港），App 出口 IP 在大陆/香港间跳变，可能触发币安风控摩擦
+
+### 修改
+- **Binance 组默认 `direct` → `香港自动`**：`static=Binance, 香港自动, 香港住宅IP, 香港节点, direct, 日本节点, 新加坡节点, 台湾节点, 韩国节点`
+- direct 保留为手动选项（列于香港选项之后），想切回随时可在策略组里手动选
+- Clash 配置（ClashForSelf.yaml）同步修改（DIRECT 同样保留为手动选项）
+- 分流规则文件（qx/Binance.list / clash/Binance.yaml）无需改动，覆盖度已完备
+
 ## 2026-09-06（三）· 兜底分流重排
 
 ### 修改
